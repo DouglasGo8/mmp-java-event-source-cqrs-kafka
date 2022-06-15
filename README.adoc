@@ -1,0 +1,40 @@
+= Java Microservices: CQRS & Event Sourcing with Apache Kafka and Camel
+
+== Links
+
+- https://camel.apache.org/camel-quarkus/2.7.x/reference/extensions/kafka.html#_usage[Quarkus Kafka Dev Services]
+- https://camel.apache.org/components/3.14.x/kafka-component.html[Camel Kafka Component]
+
+== Why do we need CQRS?
+
+. Data is often more frequently queried than altered, or vice versa
+. Segregating commands and queries enable us to *optimize each for high performance*
+. Read and write *representations of data often differ* substantially
+. Executing a command and query operations on the same model can cause *data contention*
+. Segregating read and write concerns enables you to *manage read and write security separately*
+
+== Benefits of Event Sourcing
+
+. The event store provides a *complete log of every state change*
+. The *state* of an object/aggregate *can be recreated by* replaying the event store
+. *Improves write performance*.
+All event types are simply appended to the event store.
+They're no update or delete operations
+. In the case of failure, the event store can be used to *restore read database*
+
+[source,bash]
+----
+docker network create --attachable -d bridge myDockerNetwork
+docker network ls
+----
+
+[source,yaml]
+----
+version: '3.4'
+
+
+networks:
+ default:
+  external:
+    name: myDockerNetwork
+----

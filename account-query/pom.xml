@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <artifactId>mmp-java-event-source-cqrs-kafka</artifactId>
+    <groupId>com.udemy.java.msc.cqrs.events</groupId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <groupId>com.udemy.java.msc.cqrs.events.techbank.account.query</groupId>
+  <artifactId>account-query</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+
+
+  <name>Java Microservices :: CQRS Event Source with Kafka :: Account Query</name>
+  <description>Bank Account Query API Project</description>
+
+  <dependencies>
+    <!--
+  <dependency>
+    <groupId>org.apache.camel.quarkus</groupId>
+    <artifactId>camel-quarkus-kafka</artifactId>
+  </dependency>
+  -->
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-orm</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-jpa</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jdbc-postgresql</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>
